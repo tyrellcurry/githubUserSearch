@@ -2,20 +2,26 @@ import React from 'react';
 
 function Content({theme, userData}) {
   const getClickableLink = (link) => {
-    return link.startsWith('http://') || link.startsWith('https://')
-      ? link
-      : `http://${link}`;
+    if (link) {
+      return link.startsWith('http://') || link.startsWith('https://')
+        ? link
+        : `http://${link}`;
+    }
   };
   return (
     <div className="content-main" data-theme={theme}>
       <div className="profile-section">
         <div className="profile-img">
-          <img src={`${userData.avatar}`} alt="GitHub user's avatar image" />
+          <img src={`${userData.avatar}`} alt="GitHub user's avatar" />
         </div>
         <div className="top">
           <div className="title">
             <h1>{userData.name ? userData.name : 'GitHub User'}</h1>
-            <a href={`//github.com/${userData.user}`} target="_blank">
+            <a
+              href={`//github.com/${userData.user}`}
+              target="_blank"
+              rel="noreferrer"
+            >
               <h2>{userData.user ? userData.user : 'n/a'}</h2>
             </a>
           </div>
@@ -64,7 +70,11 @@ function Content({theme, userData}) {
           <div className="twitter">
             <p className="footer-p">
               <i class="fa-brands fa-twitter"></i>
-              <a href={`//twitter.com/${userData.twitter}`} target="_blank">
+              <a
+                href={`//twitter.com/${userData.twitter}`}
+                target="_blank"
+                rel="noreferrer"
+              >
                 {userData.twitter ? userData.twitter : 'Unavaiable'}
               </a>
             </p>
@@ -74,7 +84,11 @@ function Content({theme, userData}) {
           <div className="website">
             <p className="footer-p">
               <i class="fa-solid fa-desktop"></i>
-              <a href={getClickableLink(userData.website)} target="_blank">
+              <a
+                href={getClickableLink(userData.website)}
+                target="_blank"
+                rel="noreferrer"
+              >
                 {userData.website ? userData.website : 'Unavaiable'}
               </a>
             </p>
