@@ -1,6 +1,11 @@
 import React from 'react';
 
 function Content({theme, userData}) {
+  const getClickableLink = (link) => {
+    return link.startsWith('http://') || link.startsWith('https://')
+      ? link
+      : `http://${link}`;
+  };
   return (
     <div className="content-main" data-theme={theme}>
       <div className="profile-section">
@@ -69,7 +74,7 @@ function Content({theme, userData}) {
           <div className="website">
             <p className="footer-p">
               <i class="fa-solid fa-desktop"></i>
-              <a href={`//${userData.website}`} target="_blank">
+              <a href={getClickableLink(userData.website)} target="_blank">
                 {userData.website ? userData.website : 'Unavaiable'}
               </a>
             </p>
