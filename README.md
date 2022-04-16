@@ -37,7 +37,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Netlify](https://url-shortening-app-tc.netlify.app/)
+- Live Site URL: [Netlify](https://github-user-search-tc.netlify.app/)
 
 ## The Process
 
