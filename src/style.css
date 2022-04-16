@@ -11,7 +11,7 @@
   --stats: #0d213a;
   --toggle: #fff67e;
   --toggle-btn: #0d213a;
-  --m-left: auto;
+  --m-left: 0;
 }
 
 [data-theme='dark'] {
@@ -24,7 +24,7 @@
   --stats: #619adf;
   --toggle: #00478e;
   --toggle-btn: #86b2ee;
-  --m-left: 0;
+  --m-left: auto;
 }
 
 *,
