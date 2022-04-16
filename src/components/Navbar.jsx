@@ -1,19 +1,19 @@
 import React from 'react';
-import {DarkModeToggle} from 'react-dark-mode-toggle-2';
 import '../style.css';
 
-function App() {
+function Navbar({theme, switchTheme}) {
   const [isDarkMode, setIsDarkMode] = React.useState(false);
+
   return (
-    <nav className="navbar">
+    <nav className="navbar" data-theme={theme}>
       <div className="nav-flex">
         <div className="brand">devfinder</div>
-        <div className="light-toggle">
-          <DarkModeToggle onChange={setIsDarkMode} isDarkMode={isDarkMode} />
+        <div className="light-toggle" id="toggle" onClick={switchTheme}>
+          <div className="circle" id="circle"></div>
         </div>
       </div>
     </nav>
   );
 }
 
-export default App;
+export default Navbar;

@@ -1,41 +1,48 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
-function Content() {
+function Content({theme, userData}) {
   return (
-    <div className="content-main">
+    <div className="content-main" data-theme={theme}>
       <div className="profile-section">
-        <div className="profile-img"></div>
+        <div className="profile-img">
+          <img src={`${userData.avatar}`} alt="" />
+        </div>
         <div className="top">
           <div className="title">
-            <h1>Title</h1>
-            <h2>username</h2>
+            <h1>{userData.name ? userData.name : 'GitHub User'}</h1>
+            <h2>{userData.user ? userData.user : 'n/a'}</h2>
           </div>
           <div className="date">
-            <p>Joined April 10 2022</p>
+            <p>
+              Joined:{' '}
+              {userData.date ? userData.date.substring(0, 10) : 'unknown'}
+            </p>
           </div>
         </div>
       </div>
       <div className="bio">
         <h2>Bio</h2>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora quos
-          iusto incidunt facere! Corporis rerum eveniet quas, laboriosam
-          veritatis laborum eum eligendi atque est eos.
-        </p>
+        <p>{userData.bio ? userData.bio : 'No bio available'}</p>
       </div>
       <div className="stats">
         <div className="stats-content">
           <div className="repos">
             <h2 className="responsive-h2">Repos</h2>
-            <p className="responsive-p">8</p>
+            <p className="responsive-p">
+              {userData.repos ? userData.repos : '0'}
+            </p>
           </div>
           <div className="followers">
             <h2 className="responsive-h2">Followers</h2>
-            <p className="responsive-p">1234</p>
+            <p className="responsive-p">
+              {userData.followers ? userData.followers : '0'}
+            </p>
           </div>
           <div className="following">
             <h2 className="responsive-h2">Following</h2>
-            <p className="responsive-p">55</p>
+            <p className="responsive-p">
+              {userData.following ? userData.following : '0'}
+            </p>
           </div>
         </div>
       </div>
@@ -43,25 +50,28 @@ function Content() {
         <div className="footer-one">
           <div className="location">
             <p className="footer-p">
-              <i className="fa-solid fa-location-dot"></i> Vacouver
+              <i className="fa-solid fa-location-dot"></i>
+              {userData.location ? userData.location : 'Unavaiable'}
             </p>
           </div>
           <div className="twitter">
             <p className="footer-p">
-              <i class="fa-brands fa-twitter"></i> @tyrell_io
+              <i class="fa-brands fa-twitter"></i>
+              {userData.twitter ? userData.twitter : 'Unavaiable'}
             </p>
           </div>
         </div>
         <div className="footer-two">
           <div className="website">
             <p className="footer-p">
-              <i class="fa-solid fa-desktop"></i> tyrellcurry.io
+              <i class="fa-solid fa-desktop"></i>
+              {userData.website ? userData.website : 'Unavaiable'}
             </p>
           </div>
           <div className="workplace">
             <div className="footer-p">
               <i class="fa-solid fa-building"></i>
-              <p>TenTree</p>
+              <p>{userData.company ? userData.company : 'Unavaiable'}</p>
             </div>
           </div>
         </div>

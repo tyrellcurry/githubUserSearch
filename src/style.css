@@ -1,15 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600&display=swap');
 
 :root {
-  --bg-colour: rgb(15, 28, 52);
-  --content-colour: rgb(31 42 72);
-  --bg-button: rgb(1 121 254);
-  --bg-button-hover: rgb(43, 131, 231);
-  --font-colour-main: rgb(241, 245, 255);
-  --font-colour-p: rgb(199, 216, 255);
-  --accent: rgb(184 192 204);
-  --alt-accent: rgb(112, 169, 255);
-  --stats: rgb(19 28 47);
+  --bg-colour: #101d2e;
+  --bg-colour-html: #4e7dbb;
+  --content-colour: #192d49;
+  --bg-button: #007af4;
+  --bg-button-hover: #3964a4;
+  --font-colour-main: #e2f0ff;
+  --alt-accent: #007af4;
+  --stats: #0d213a;
+  --toggle: #fff67e;
+  --toggle-btn: #0d213a;
+  --m-left: auto;
+}
+
+[data-theme='dark'] {
+  --bg-colour: #c2dcff;
+  --content-colour: #86b2ee;
+  --bg-button: #4a92ff;
+  --bg-button-hover: #2883de;
+  --font-colour-main: #1c252f;
+  --alt-accent: #0060c1;
+  --stats: #619adf;
+  --toggle: #00478e;
+  --toggle-btn: #86b2ee;
+  --m-left: 0;
 }
 
 *,
@@ -21,18 +36,19 @@ html {
 }
 
 body {
-  height: 100vh;
+  background-color: var(--bg-colour);
+}
+
+.wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: var(--bg-colour);
+  padding: 5em;
 }
 
 main {
   margin: auto;
-  width: min(900px, 85%);
   font-family: 'Roboto Mono', monospace;
-  /* height: 600px; */
 }
 
 textarea:focus,
@@ -47,11 +63,12 @@ input:focus {
   font-size: clamp(0.75rem, 5vw, 2.5rem);
   font-weight: 600;
   background: transparent;
-  padding-bottom: 2%;
+  padding-bottom: 3%;
 }
 .nav-flex {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .brand {
@@ -65,10 +82,19 @@ input:focus {
 .light-toggle {
   display: flex;
   align-items: center;
-  text-transform: uppercase;
-  font-size: clamp(0.5rem, 3vw, 1.5rem);
   cursor: pointer;
-  letter-spacing: 2px;
+  width: 7rem;
+  padding: 0.4rem;
+  background-color: var(--toggle);
+  border-radius: 50px;
+}
+
+.circle {
+  height: 2.75rem;
+  width: 2.75rem;
+  background-color: var(--toggle-btn);
+  border-radius: 100%;
+  margin-left: var(--m-left);
 }
 
 .fa {
@@ -81,7 +107,7 @@ input:focus {
   display: flex;
   align-items: center;
   background-color: var(--content-colour);
-  padding: 0.5rem;
+  padding: 0.55rem;
   border-radius: 5px;
   width: 100%;
   margin-bottom: 5%;
@@ -92,7 +118,7 @@ input:focus {
 }
 
 #search-input {
-  font-size: clamp(0.45rem, 4vw, 2.25rem);
+  font-size: clamp(0.9rem, 2.5vw, 2.25rem);
   width: 100%;
   margin: 0 4%;
   background: transparent;
@@ -131,14 +157,12 @@ input:focus {
   padding-left: 5%;
 }
 
-.profile-img {
-  background: url('https://avatars.githubusercontent.com/u/28767304?v=4');
+.profile-img img {
   height: 13vw;
   min-height: 7rem;
   width: 13vw;
   min-width: 7rem;
   background-size: contain;
-  background-position: center;
   border-radius: 100%;
 }
 
@@ -153,6 +177,7 @@ input:focus {
 
 .date p {
   font-size: clamp(0.75rem, 3vw, 1.15rem);
+  margin-top: 0.55em;
 }
 
 .bio {
@@ -170,7 +195,7 @@ input:focus {
 }
 
 .footer-p {
-  font-size: clamp(0.6rem, 3vw, 1rem);
+  font-size: clamp(0.5rem, 2vw, 1.1rem);
   display: flex;
   align-items: center;
 }
@@ -207,7 +232,6 @@ input:focus {
 .footer {
   display: flex;
   justify-content: space-between;
-  width: 75%;
 }
 
 .workplace,
@@ -228,13 +252,32 @@ input:focus {
   #search-input {
     padding: 0.5rem 1rem;
   }
-  body {
-    height: clamp(60vh, 100vh, 120vh);
+  main {
+    width: min(900px, 85%);
   }
 }
 
-@media (min-width: 1000px) {
-  body {
-    height: 120vh;
+@media (max-width: 640px) {
+  .wrapper {
+    padding: 2em;
+    margin-top: 2em;
+  }
+  .stats-content {
+    margin: 1.5em 0;
+  }
+  textarea:focus,
+  input:focus {
+    box-shadow: 0 0 0 2px var(--alt-accent);
+  }
+  .light-toggle {
+    width: 3rem;
+    padding: 0.22rem;
+  }
+  .circle {
+    height: 1.12rem;
+    width: 1.12rem;
+  }
+  .date p {
+    margin-top: 0;
   }
 }

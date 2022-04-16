@@ -1,0 +1,8 @@
+#darkMode {
+  background-color: aqua;
+}
+
+#darkMode.clicked {
+  filter: none !important;
+  background-color: black;
+}
