@@ -5,12 +5,14 @@ function Content({theme, userData}) {
     <div className="content-main" data-theme={theme}>
       <div className="profile-section">
         <div className="profile-img">
-          <img src={`${userData.avatar}`} alt="" />
+          <img src={`${userData.avatar}`} alt="GitHub user's avatar image" />
         </div>
         <div className="top">
           <div className="title">
             <h1>{userData.name ? userData.name : 'GitHub User'}</h1>
-            <h2>{userData.user ? userData.user : 'n/a'}</h2>
+            <a href={`//github.com/${userData.user}`} target="_blank">
+              <h2>{userData.user ? userData.user : 'n/a'}</h2>
+            </a>
           </div>
           <div className="date">
             <p>
