@@ -83,15 +83,15 @@ input:focus {
   display: flex;
   align-items: center;
   cursor: pointer;
-  width: 7rem;
-  padding: 0.4rem;
+  width: 5.75rem;
+  padding: 0.26rem;
   background-color: var(--toggle);
   border-radius: 50px;
 }
 
 .circle {
-  height: 2.75rem;
-  width: 2.75rem;
+  height: 2.27rem;
+  width: 2.27rem;
   background-color: var(--toggle-btn);
   border-radius: 100%;
   margin-left: var(--m-left);
