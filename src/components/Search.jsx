@@ -36,6 +36,12 @@ function Search({theme, setUserData}) {
     userSearch(searchInput);
   };
 
+  function enterKey(e) {
+    if (e.key === 'Enter') {
+      userSearch(searchInput);
+    }
+  }
+
   return (
     <div>
       <div className="search-main" data-theme={theme}>
@@ -47,6 +53,7 @@ function Search({theme, setUserData}) {
           id="search-input"
           type="text"
           placeholder="Search GitHub Username..."
+          onKeyDown={enterKey}
         />
 
         <button id="search-button" onClick={submittedInput}>
