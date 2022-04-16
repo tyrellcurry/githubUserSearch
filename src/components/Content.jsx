@@ -57,7 +57,9 @@ function Content({theme, userData}) {
           <div className="twitter">
             <p className="footer-p">
               <i class="fa-brands fa-twitter"></i>
-              {userData.twitter ? userData.twitter : 'Unavaiable'}
+              <a href={`//twitter.com/${userData.twitter}`} target="_blank">
+                {userData.twitter ? userData.twitter : 'Unavaiable'}
+              </a>
             </p>
           </div>
         </div>
@@ -65,7 +67,9 @@ function Content({theme, userData}) {
           <div className="website">
             <p className="footer-p">
               <i class="fa-solid fa-desktop"></i>
-              {userData.website ? userData.website : 'Unavaiable'}
+              <a href={`//${userData.website}`} target="_blank">
+                {userData.website ? userData.website : 'Unavaiable'}
+              </a>
             </p>
           </div>
           <div className="workplace">
