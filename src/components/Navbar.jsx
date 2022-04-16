@@ -2,8 +2,6 @@ import React from 'react';
 import '../style.css';
 
 function Navbar({theme, switchTheme}) {
-  const [isDarkMode, setIsDarkMode] = React.useState(false);
-
   return (
     <nav className="navbar" data-theme={theme}>
       <div className="nav-flex">

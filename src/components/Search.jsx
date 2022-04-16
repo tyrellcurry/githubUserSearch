@@ -8,6 +8,7 @@ function Search({theme, setUserData}) {
     return () => {
       ignore = true;
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const [searchInput, setSearchInput] = useState('');
   const userSearch = (value) => {
