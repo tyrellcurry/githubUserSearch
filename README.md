@@ -82,3 +82,7 @@ export const getUser = async (submittedUser) => {
 ## Acknowledgments
 
 Shoutout to [Rod Garland](https://github.com/zencoder24) for helping me with managing state for the darkmode toggle.
+
+--
+
+#### Live Site URL: [Netlify](https://github-user-search-tc.netlify.app/)
