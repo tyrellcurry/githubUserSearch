@@ -1,5 +1,7 @@
 # devfinder - A GitHub User Search
 
+## Checkout The Live Project: [HERE!](https://url-shortening-app-tc.netlify.app/)
+
 ## Table Of Contents
 
 - [Overview](#overview)
@@ -83,6 +85,10 @@ export const getUser = async (submittedUser) => {
 
 Shoutout to [Rod Garland](https://github.com/zencoder24) for helping me with managing state for the darkmode toggle.
 
+<<<<<<< HEAD
 --
 
 #### Live Site URL: [Netlify](https://github-user-search-tc.netlify.app/)
+=======
+- Live Site URL: [Netlify](https://url-shortening-app-tc.netlify.app/)
+>>>>>>> staging
